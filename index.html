@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mr. Romance | Live Music for Senior Living</title>
+<meta name="description" content="Mr. Romance (Lloyd Nance) brings smooth R&B, classics and love songs to 55+ communities in Jacksonville, Florida and beyond.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --brown-dark: #2b1d14;
+    --brown-mid: #6b4a35;
+    --tan: #c9a876;
+    --cream: #faf6ef;
+    --gold: #d4af6a;
+    --text-dark: #2b1d14;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    background: var(--cream);
+    line-height: 1.6;
+  }
+  h1, h2, h3 { font-family: 'Playfair Display', serif; }
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; display: block; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, #3a2818 0%, #6b4a35 50%, #8a6a4a 100%);
+    color: #fff;
+    padding: 100px 0 90px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(60deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 2px, transparent 2px, transparent 40px),
+      repeating-linear-gradient(-60deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 2px, transparent 2px, transparent 40px);
+    pointer-events: none;
+  }
+  .hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-text { flex: 1 1 420px; }
+  .hero-kicker {
+    letter-spacing: 4px;
+    font-size: 13px;
+    color: var(--gold);
+    margin-bottom: 18px;
+    font-weight: 500;
+  }
+  .hero h1 {
+    font-size: 56px;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+  }
+  .hero p.tagline {
+    font-size: 19px;
+    color: #f0e3d0;
+    margin-bottom: 32px;
+    max-width: 460px;
+  }
+  .btn {
+    display: inline-block;
+    padding: 14px 32px;
+    background: var(--gold);
+    color: #2b1d14;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: background 0.2s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+  }
+  .btn:hover { background: #e8c384; transform: translateY(-1px); }
+  .btn-outline {
+    background: transparent;
+    border: 1.5px solid var(--gold);
+    color: var(--gold);
+  }
+  .btn-outline:hover { background: rgba(212,175,106,0.12); }
+  .hero-photo {
+    flex: 0 0 320px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+  }
+  .hero-photo img { width: 320px; height: 420px; object-fit: cover; }
+
+  /* Section generic */
+  section { padding: 80px 0; }
+  .section-kicker {
+    letter-spacing: 3px;
+    font-size: 13px;
+    color: var(--brown-mid);
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+  .section-title { font-size: 36px; margin-bottom: 24px; color: var(--brown-dark); }
+
+  /* About */
+  .about .container {
+    display: flex;
+    gap: 56px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .about-photo { flex: 0 0 300px; }
+  .about-photo img { border-radius: 6px; box-shadow: 0 12px 30px rgba(0,0,0,0.15); }
+  .about-copy { flex: 1 1 420px; }
+  .about-copy p { margin-bottom: 18px; color: #4a3a2c; font-size: 16px; }
+
+  /* Services */
+  .services { background: #f2ebdd; }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 28px;
+    margin-top: 36px;
+  }
+  .service-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 28px 24px;
+    box-shadow: 0 6px 18px rgba(43,29,20,0.06);
+    border-top: 3px solid var(--gold);
+  }
+  .service-card h3 { font-size: 19px; margin-bottom: 10px; color: var(--brown-dark); }
+  .service-card p { font-size: 14.5px; color: #5a4a3c; }
+
+  /* Gallery */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin-top: 36px;
+  }
+  .gallery-grid img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    transition: transform 0.25s ease;
+  }
+  .gallery-grid img:hover { transform: scale(1.03); }
+  .youtube-link {
+    margin-top: 28px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: var(--brown-dark);
+  }
+
+  /* Booking */
+  .booking {
+    background: linear-gradient(135deg, #3a2818 0%, #6b4a35 100%);
+    color: #fff;
+    text-align: center;
+  }
+  .booking .section-kicker { color: var(--gold); }
+  .booking h2 { color: #fff; }
+  .booking p.lead { max-width: 560px; margin: 0 auto 32px; color: #f0e3d0; font-size: 17px; }
+  .booking-btns { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; }
+
+  /* Contact */
+  .contact { text-align: center; }
+  .contact p { max-width: 480px; margin: 0 auto 28px; color: #4a3a2c; }
+  .contact-btns { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; }
+
+  /* Footer */
+  footer {
+    background: #201509;
+    color: #cbb89a;
+    text-align: center;
+    padding: 36px 0;
+    font-size: 13.5px;
+  }
+  footer a { color: var(--gold); }
+  footer p { margin-bottom: 8px; }
+
+  @media (max-width: 640px) {
+    .hero h1 { font-size: 38px; }
+    .hero .container { text-align: center; justify-content: center; }
+    .hero-photo img { width: 240px; height: 320px; }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-text">
+      <div class="hero-kicker">LIVE MUSIC FOR SENIOR LIVING</div>
+      <h1>MR. ROMANCE</h1>
+      <p class="tagline">Smooth R&amp;B, Classics &amp; Love Songs for 55+ Communities</p>
+      <a class="btn" href="#booking">Book a Performance</a>
+    </div>
+    <div class="hero-photo">
+      <img src="hero-photo.jpg" alt="Mr. Romance performing in a white suit and hat">
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-photo">
+      <img src="about-navy.jpg" alt="Lloyd Nance in U.S. Navy dress uniform">
+    </div>
+    <div class="about-copy">
+      <div class="section-kicker">Who Is Mr. Romance</div>
+      <h2 class="section-title">The Story</h2>
+      <p>Mr. Romance (Lloyd Nance) discovered his passion for music at the age of ten, singing in church choirs and school ensembles. His talent flourished through junior high and high school, eventually leading him to perform with R&amp;B funk bands at North Carolina A&amp;T State University, where his smooth first tenor and falsetto earned him the nickname &ldquo;Mr. Romance.&rdquo;</p>
+      <p>A retired U.S. Navy Intelligence Officer with 23 years of honorable service, Lloyd entertained audiences worldwide in Department of Defense shows, performing in cities such as New Orleans, Nashville, London, Rota (Spain), Denmark, Naples (Italy), and Singapore.</p>
+      <p>Today, he brings his soulful voice to senior living communities, recently performing at Sweetwater and Everlake in Jacksonville, Florida. Married for 46 years to his wife Virginia, Lloyd is a proud father of four and grandfather to four wonderful grandchildren.</p>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-kicker">Serving Jacksonville, Florida and Surrounding Areas</div>
+    <h2 class="section-title">Live Music &amp; DJ for 55+ Communities</h2>
+    <p style="max-width:600px;color:#5a4a3c;">Mr. Romance brings the soulful sounds of Classic R&amp;B, Funk, Disco, and Smooth Jazz to your residents. Perfect for holiday parties, dance nights, and special events. With easy setup and quick booking, we make it simple to turn any gathering into a celebration.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Live Performance Sets</h3>
+        <p>Soulful, engaging shows featuring Classic R&amp;B, Funk, Disco, and Smooth Jazz favorites.</p>
+      </div>
+      <div class="service-card">
+        <h3>DJ Accompaniment</h3>
+        <p>Seamless music transitions and curated playlists to keep the energy flowing before, during, and after live sets.</p>
+      </div>
+      <div class="service-card">
+        <h3>Dance Parties</h3>
+        <p>High-energy events designed to get residents moving and enjoying timeless hits.</p>
+      </div>
+      <div class="service-card">
+        <h3>Holiday &amp; Special Occasion Parties</h3>
+        <p>Customized performances for holidays, birthdays, anniversaries, and themed events.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="section-kicker">Past Performances</div>
+    <h2 class="section-title">Moments on Stage</h2>
+    <div class="gallery-grid">
+      <img src="gallery-dod-spain.jpg" alt="Mr. Romance performing at a Department of Defense Operation Allied Entertainment show in Rota, Spain">
+      <img src="gallery-london-1991.jpg" alt="Mr. Romance performing in a tuxedo in London, 1991">
+      <img src="gallery-singing.jpg" alt="Mr. Romance singing into a microphone">
+      <img src="gallery-recent-2025.jpg" alt="Mr. Romance performing at a senior living community event in 2025">
+    </div>
+    <a class="youtube-link" href="https://www.youtube.com/@lloydnance3773" target="_blank" rel="noopener">&#9654; Watch performances on YouTube</a>
+  </div>
+</section>
+
+<section class="booking" id="booking">
+  <div class="container">
+    <div class="section-kicker">Book Mr. Romance Today</div>
+    <h2 class="section-title">Reserve Your Date Now</h2>
+    <p class="lead">Turn your community gathering into a celebration. Limited availability, quick and easy scheduling.</p>
+    <div class="booking-btns">
+      <a class="btn" href="mailto:llgnance@outlook.com?subject=Booking%20Request%20-%20Mr.%20Romance&body=Community%20name%3A%0APreferred%20date%3A%0AType%20of%20event%20(Live%20Performance%20%2F%20DJ%20Accompaniment%20%2F%20Dance%20Party)%3A%0ANumber%20of%20guests%3A%0A">Book Mr. Romance</a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-kicker">Questions</div>
+    <h2 class="section-title">Your Community Deserves Great Music</h2>
+    <p>Have a question about availability, pricing, or planning your event? Reach out directly and Mr. Romance will get back to you.</p>
+    <div class="contact-btns">
+      <a class="btn btn-outline" href="mailto:llgnance@outlook.com?subject=Question%20for%20Mr.%20Romance">Email Mr. Romance</a>
+      <a class="btn btn-outline" href="mailto:llgnance@outlook.com?subject=Event%20Planning%20-%20Mr.%20Romance">Plan Your Event Today</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Follow Mr. Romance on <a href="https://www.youtube.com/@lloydnance3773" target="_blank" rel="noopener">YouTube</a></p>
+  <p>&copy; Mr. Romance &middot; Lloyd Nance &middot; Live Music for Senior Living</p>
+  <p>Built by MainStreet AI</p>
+</footer>
+
+</body>
+</html>
